@@ -6,6 +6,7 @@
   <meta name="description" content="Wanland Consumables - Reliable office stationery, industrial supplies, cleaning products and more in Lae, Papua New Guinea. Prioritizing Service Delivery.">
   <title>Wanland Consumables | Prioritizing Service Delivery</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="wlc.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <span class="logo-mark">W</span>
+        <img src="wlc.png" alt="Wanland Consumables" class="logo-img">
         <div class="logo-text">
           <strong>Wanland</strong>
           <span>CONSUMABLES</span>
@@ -82,84 +83,74 @@
       <div class="section-header">
         <p class="eyebrow">What We Offer</p>
         <h2>Products &amp; Services</h2>
-        <p class="section-desc">A growing range of quality supplies for offices, industry and everyday needs.</p>
+        <p class="section-desc">Browse our product catalogues. Click a category to view the full range.</p>
       </div>
+
       <div class="products-grid" id="productsGrid">
-        <!-- Product cards - placeholders until images are provided -->
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Office &amp; Stationery</span>
+
+        <!-- General Stationeries -->
+        <article class="product-card" data-category="stationeries">
+          <div class="product-image">
+            <img src="PRODUCT%20CATALOG%202025%20-%20General%20Stationeries%20(pdf.io)%20(1)/PRODUCT%20CATALOG%202025%20-%20General%20Stationeries-0.jpg" alt="General Stationeries" loading="lazy">
           </div>
           <div class="product-body">
-            <h3>Office &amp; Stationery Supplies</h3>
+            <h3>General Stationeries</h3>
             <p>Pens, paper, folders, notebooks, binders and everyday office essentials.</p>
+            <button class="btn btn-sm view-catalog" data-category="stationeries">View Catalogue</button>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Inks &amp; Toners</span>
+
+        <!-- Inks & Toners -->
+        <article class="product-card" data-category="inks">
+          <div class="product-image">
+            <img src="PRODUCT%20CATALOG%202025%20-%20Inks%20%26%20Toners/PRODUCT%20CATALOG%202025-0.jpg" alt="Inks &amp; Toners" loading="lazy">
           </div>
           <div class="product-body">
             <h3>Inks &amp; Toners</h3>
             <p>Compatible and original inks and toners for major printer brands.</p>
+            <button class="btn btn-sm view-catalog" data-category="inks">View Catalogue</button>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Printers &amp; IT</span>
+
+        <!-- IT Accessories -->
+        <article class="product-card" data-category="it">
+          <div class="product-image">
+            <img src="PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES%20(pdf.io)/PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES-0.jpg" alt="IT Accessories" loading="lazy">
           </div>
           <div class="product-body">
-            <h3>Printers &amp; IT Accessories</h3>
-            <p>Printers, cables, storage devices and related IT accessories.</p>
+            <h3>IT Accessories</h3>
+            <p>Cables, storage devices, peripherals and related IT accessories.</p>
+            <button class="btn btn-sm view-catalog" data-category="it">View Catalogue</button>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Cleaning</span>
+
+        <!-- Catering & Paper Products -->
+        <article class="product-card" data-category="catering">
+          <div class="product-image">
+            <img src="PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)%20(pdf.io)/PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)-0.jpg" alt="Catering &amp; Paper Products" loading="lazy">
           </div>
           <div class="product-body">
-            <h3>Cleaning Detergents &amp; Chemicals</h3>
-            <p>Professional-grade cleaning products for commercial and industrial use.</p>
+            <h3>Catering &amp; Paper Products</h3>
+            <p>Paper products, catering supplies and related consumables.</p>
+            <button class="btn btn-sm view-catalog" data-category="catering">View Catalogue</button>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Industrial</span>
+
+        <!-- PPE Consumables -->
+        <article class="product-card" data-category="ppe">
+          <div class="product-image">
+            <img src="PRODUCT%20CATALOG%202025%20-PPE%20CONSUMABLES%20(1)-0.jpg" alt="PPE Consumables" loading="lazy">
           </div>
           <div class="product-body">
-            <h3>Industrial &amp; Catering Consumables</h3>
-            <p>Consumable products for industrial operations and catering needs.</p>
+            <h3>PPE Consumables</h3>
+            <p>Personal protective equipment and safety consumables for workplace use.</p>
+            <button class="btn btn-sm view-catalog" data-category="ppe">View Catalogue</button>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Furniture</span>
-          </div>
-          <div class="product-body">
-            <h3>Office Furniture &amp; Wooden Pallets</h3>
-            <p>Desks, chairs, storage and wooden pallets for logistics and industry.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>Auto Parts</span>
-          </div>
-          <div class="product-body">
-            <h3>Auto Parts &amp; Industrial Supplies</h3>
-            <p>Quality auto parts and a range of industrial supply items.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-image placeholder">
-            <span>More</span>
-          </div>
-          <div class="product-body">
-            <h3>Other Products</h3>
-            <p>Additional categories available on request as the business grows.</p>
-          </div>
-        </article>
+
       </div>
-      <p class="products-note">Product photos will be added once provided. Contact us for current stock and pricing.</p>
+
+      <p class="products-note">Contact us for current stock, pricing and bulk orders. We also supply furniture, wooden pallets, auto parts and industrial supplies on request.</p>
     </div>
   </section>
 
@@ -270,7 +261,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <span class="logo-mark">W</span>
+          <img src="wlc.png" alt="Wanland Consumables" class="logo-img">
           <div class="logo-text">
             <strong>Wanland</strong>
             <span>CONSUMABLES</span>
@@ -285,6 +276,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- Catalogue Lightbox Modal -->
+  <div class="modal" id="catalogModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <h3 id="modalTitle" class="modal-title">Catalogue</h3>
+      <div class="modal-gallery" id="modalGallery"></div>
+      <div class="modal-nav">
+        <button class="btn btn-outline" id="prevPage">← Previous</button>
+        <span class="page-indicator" id="pageIndicator">1 / 1</span>
+        <button class="btn btn-outline" id="nextPage">Next →</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
