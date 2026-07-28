@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="logo">
@@ -35,7 +34,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -50,7 +48,6 @@
     </div>
   </section>
 
-  <!-- About -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section-header">
@@ -77,96 +74,41 @@
     </div>
   </section>
 
-  <!-- Products -->
   <section class="section products" id="products">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">What We Offer</p>
         <h2>Products &amp; Services</h2>
-        <p class="section-desc">Search or browse our product catalogues. Click a category to view the full range.</p>
+        <p class="section-desc">Search by product name or filter by category. Click any item to view it in the catalogue.</p>
       </div>
 
-      <!-- Search -->
       <div class="search-wrap">
         <div class="search-box">
           <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="search" id="productSearch" placeholder="Search products… e.g. toner, gloves, pens, paper" autocomplete="off" aria-label="Search products">
+          <input type="search" id="productSearch" placeholder="Search products… e.g. toner HP 61, gloves, pens" autocomplete="off" aria-label="Search products">
           <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" hidden>&times;</button>
         </div>
-        <p class="search-status" id="searchStatus" aria-live="polite"></p>
       </div>
 
-      <div class="products-grid" id="productsGrid">
-
-        <!-- General Stationeries -->
-        <article class="product-card" data-category="stationeries" data-keywords="stationery stationeries office pens pencils paper folders notebooks binders staplers scissors rulers markers highlighters envelopes sticky notes desk">
-          <div class="product-image">
-            <img src="PRODUCT%20CATALOG%202025%20-%20General%20Stationeries%20(pdf.io)%20(1)/PRODUCT%20CATALOG%202025%20-%20General%20Stationeries-0.jpg" alt="General Stationeries" loading="lazy">
-          </div>
-          <div class="product-body">
-            <h3>General Stationeries</h3>
-            <p>Pens, paper, folders, notebooks, binders and everyday office essentials.</p>
-            <button class="btn btn-sm view-catalog" data-category="stationeries">View Catalogue</button>
-          </div>
-        </article>
-
-        <!-- Inks & Toners -->
-        <article class="product-card" data-category="inks" data-keywords="ink inks toner toners cartridge cartridges printer printing hp canon epson brother laser inkjet refill">
-          <div class="product-image">
-            <img src="PRODUCT%20CATALOG%202025%20-%20Inks%20%26%20Toners/PRODUCT%20CATALOG%202025-0.jpg" alt="Inks &amp; Toners" loading="lazy">
-          </div>
-          <div class="product-body">
-            <h3>Inks &amp; Toners</h3>
-            <p>Compatible and original inks and toners for major printer brands.</p>
-            <button class="btn btn-sm view-catalog" data-category="inks">View Catalogue</button>
-          </div>
-        </article>
-
-        <!-- IT Accessories -->
-        <article class="product-card" data-category="it" data-keywords="it accessories computer cable cables usb mouse keyboard flash drive hard drive storage peripheral peripherals laptop charger adapter">
-          <div class="product-image">
-            <img src="PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES%20(pdf.io)/PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES-0.jpg" alt="IT Accessories" loading="lazy">
-          </div>
-          <div class="product-body">
-            <h3>IT Accessories</h3>
-            <p>Cables, storage devices, peripherals and related IT accessories.</p>
-            <button class="btn btn-sm view-catalog" data-category="it">View Catalogue</button>
-          </div>
-        </article>
-
-        <!-- Catering & Paper Products -->
-        <article class="product-card" data-category="catering" data-keywords="catering paper products tissue toilet paper napkin napkins cups plates packaging food service kitchen">
-          <div class="product-image">
-            <img src="PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)%20(pdf.io)/PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)-0.jpg" alt="Catering &amp; Paper Products" loading="lazy">
-          </div>
-          <div class="product-body">
-            <h3>Catering &amp; Paper Products</h3>
-            <p>Paper products, catering supplies and related consumables.</p>
-            <button class="btn btn-sm view-catalog" data-category="catering">View Catalogue</button>
-          </div>
-        </article>
-
-        <!-- PPE Consumables -->
-        <article class="product-card" data-category="ppe" data-keywords="ppe safety gloves mask masks helmet boots protective equipment vest goggles earplugs hard hat boots">
-          <div class="product-image">
-            <img src="PRODUCT%20CATALOG%202025%20-PPE%20CONSUMABLES%20(1)-0.jpg" alt="PPE Consumables" loading="lazy">
-          </div>
-          <div class="product-body">
-            <h3>PPE Consumables</h3>
-            <p>Personal protective equipment and safety consumables for workplace use.</p>
-            <button class="btn btn-sm view-catalog" data-category="ppe">View Catalogue</button>
-          </div>
-        </article>
-
+      <div class="filter-tabs" id="filterTabs" role="tablist">
+        <button class="filter-tab active" data-cat="all" role="tab">All</button>
+        <button class="filter-tab" data-cat="stationeries" role="tab">Stationeries</button>
+        <button class="filter-tab" data-cat="inks" role="tab">Inks &amp; Toners</button>
+        <button class="filter-tab" data-cat="it" role="tab">IT &amp; Printers</button>
+        <button class="filter-tab" data-cat="catering" role="tab">Catering &amp; Cleaning</button>
+        <button class="filter-tab" data-cat="ppe" role="tab">PPE</button>
       </div>
 
-      <p class="search-empty" id="searchEmpty" hidden>No products match your search. Try a different keyword or <button type="button" class="link-btn" id="clearSearchLink">clear the search</button>.</p>
+      <p class="search-status" id="searchStatus" aria-live="polite"></p>
+
+      <div class="item-grid" id="itemGrid"></div>
+
+      <p class="search-empty" id="searchEmpty" hidden>No products match your search. Try a different keyword or <button type="button" class="link-btn" id="clearSearchLink">clear filters</button>.</p>
 
       <p class="products-note">Contact us for current stock, pricing and bulk orders. We also supply furniture, wooden pallets, auto parts and industrial supplies on request.</p>
     </div>
   </section>
 
-  <!-- Why Us -->
   <section class="section why-us" id="why-us">
     <div class="container">
       <div class="section-header">
@@ -174,41 +116,16 @@
         <h2>Why Choose Wanland</h2>
       </div>
       <div class="merits-grid">
-        <div class="merit">
-          <div class="merit-icon">01</div>
-          <h3>Client-Focused Solutions</h3>
-          <p>Creative solutions that meet real business needs while upholding ethical standards in every delivery.</p>
-        </div>
-        <div class="merit">
-          <div class="merit-icon">02</div>
-          <h3>Quality at Competitive Prices</h3>
-          <p>We continuously seek ways to deliver quality products and service at rates that make sense for our clients.</p>
-        </div>
-        <div class="merit">
-          <div class="merit-icon">03</div>
-          <h3>Responsive Communication</h3>
-          <p>Prepared to communicate clearly and resolve issues promptly so your operations stay on track.</p>
-        </div>
-        <div class="merit">
-          <div class="merit-icon">04</div>
-          <h3>Motivated Professional Team</h3>
-          <p>A highly motivated team delivering professional quality across all products and services.</p>
-        </div>
-        <div class="merit">
-          <div class="merit-icon">05</div>
-          <h3>Teamwork &amp; Timely Delivery</h3>
-          <p>Strong teamwork in every aspect of operations for timely and effective product and service delivery.</p>
-        </div>
-        <div class="merit">
-          <div class="merit-icon">06</div>
-          <h3>24-Hour Availability</h3>
-          <p>Dedicated contacts available around the clock for Lae operations when you need us most.</p>
-        </div>
+        <div class="merit"><div class="merit-icon">01</div><h3>Client-Focused Solutions</h3><p>Creative solutions that meet real business needs while upholding ethical standards in every delivery.</p></div>
+        <div class="merit"><div class="merit-icon">02</div><h3>Quality at Competitive Prices</h3><p>We continuously seek ways to deliver quality products and service at rates that make sense for our clients.</p></div>
+        <div class="merit"><div class="merit-icon">03</div><h3>Responsive Communication</h3><p>Prepared to communicate clearly and resolve issues promptly so your operations stay on track.</p></div>
+        <div class="merit"><div class="merit-icon">04</div><h3>Motivated Professional Team</h3><p>A highly motivated team delivering professional quality across all products and services.</p></div>
+        <div class="merit"><div class="merit-icon">05</div><h3>Teamwork &amp; Timely Delivery</h3><p>Strong teamwork in every aspect of operations for timely and effective product and service delivery.</p></div>
+        <div class="merit"><div class="merit-icon">06</div><h3>24-Hour Availability</h3><p>Dedicated contacts available around the clock for Lae operations when you need us most.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section-header">
@@ -225,8 +142,7 @@
           <div class="contact-item">
             <h4>Phone</h4>
             <p>Mobile: <a href="tel:+67574933417">+675 7493 3417</a> | <a href="tel:+67582679129">8267 9129</a><br>
-            Telephone: 472 4972<br>
-            Fax: 472 1000</p>
+            Telephone: 472 4972<br>Fax: 472 1000</p>
           </div>
           <div class="contact-item">
             <h4>Email</h4>
@@ -243,23 +159,11 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <form class="contact-form" id="contactForm" action="#" method="get">
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com">
-            </div>
-            <div class="form-row">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="+675 ...">
-            </div>
-            <div class="form-row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
-            </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row"><label for="name">Name</label><input type="text" id="name" name="name" required placeholder="Your name"></div>
+            <div class="form-row"><label for="email">Email</label><input type="email" id="email" name="email" required placeholder="your@email.com"></div>
+            <div class="form-row"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="+675 ..."></div>
+            <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea></div>
             <button type="submit" class="btn btn-primary btn-block">Send Message</button>
             <p class="form-note">This form opens your email client. For fastest response, call or email us directly.</p>
           </form>
@@ -268,16 +172,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <div class="logo">
           <img src="wlc.png" alt="Wanland Consumables" class="logo-img">
-          <div class="logo-text">
-            <strong>Wanland</strong>
-            <span>CONSUMABLES</span>
-          </div>
+          <div class="logo-text"><strong>Wanland</strong><span>CONSUMABLES</span></div>
         </div>
         <p>Prioritizing Service Delivery<br>In Unity, We Grow</p>
       </div>
@@ -289,12 +189,12 @@
     </div>
   </footer>
 
-  <!-- Catalogue Lightbox Modal -->
   <div class="modal" id="catalogModal" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" data-close aria-label="Close">&times;</button>
       <h3 id="modalTitle" class="modal-title">Catalogue</h3>
+      <p class="modal-product" id="modalProduct"></p>
       <div class="modal-gallery" id="modalGallery"></div>
       <div class="modal-nav">
         <button class="btn btn-outline" id="prevPage">← Previous</button>
@@ -304,6 +204,7 @@
     </div>
   </div>
 
+  <script src="products-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
