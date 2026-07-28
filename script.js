@@ -49,7 +49,68 @@ const catalogues = {
   }
 };
 
-// Modal state
+// —— Product Search ——
+const searchInput = document.getElementById('productSearch');
+const searchClear = document.getElementById('searchClear');
+const searchStatus = document.getElementById('searchStatus');
+const searchEmpty = document.getElementById('searchEmpty');
+const clearSearchLink = document.getElementById('clearSearchLink');
+const productCards = document.querySelectorAll('.product-card');
+
+function runSearch() {
+  const query = (searchInput.value || '').trim().toLowerCase();
+  const terms = query.split(/\s+/).filter(Boolean);
+
+  searchClear.hidden = !query;
+
+  let visible = 0;
+
+  productCards.forEach(card => {
+    if (!terms.length) {
+      card.classList.remove('hidden');
+      visible++;
+      return;
+    }
+
+    const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+    const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
+    const keywords = (card.dataset.keywords || '').toLowerCase();
+    const haystack = `${title} ${desc} ${keywords}`;
+
+    const match = terms.every(term => haystack.includes(term));
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+
+  if (!query) {
+    searchStatus.textContent = '';
+    searchEmpty.hidden = true;
+  } else if (visible === 0) {
+    searchStatus.textContent = '';
+    searchEmpty.hidden = false;
+  } else {
+    searchStatus.textContent = `Showing ${visible} of ${productCards.length} categories`;
+    searchEmpty.hidden = true;
+  }
+}
+
+function clearSearch() {
+  searchInput.value = '';
+  runSearch();
+  searchInput.focus();
+}
+
+if (searchInput) {
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') clearSearch();
+  });
+}
+
+if (searchClear) searchClear.addEventListener('click', clearSearch);
+if (clearSearchLink) clearSearchLink.addEventListener('click', clearSearch);
+
+// —— Catalogue Modal ——
 let currentCategory = null;
 let currentPage = 0;
 
@@ -91,12 +152,13 @@ function renderPage() {
   nextBtn.style.opacity = currentPage === cat.images.length - 1 ? '0.4' : '1';
 }
 
-// Event listeners for catalogue buttons
 document.querySelectorAll('.view-catalog').forEach(btn => {
-  btn.addEventListener('click', () => openCatalog(btn.dataset.category));
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openCatalog(btn.dataset.category);
+  });
 });
 
-// Also open when clicking the product card image/area
 document.querySelectorAll('.product-card').forEach(card => {
   card.addEventListener('click', (e) => {
     if (e.target.closest('.view-catalog')) return;
@@ -105,7 +167,6 @@ document.querySelectorAll('.product-card').forEach(card => {
   });
 });
 
-// Modal close
 document.querySelectorAll('[data-close]').forEach(el => {
   el.addEventListener('click', closeCatalog);
 });
@@ -125,7 +186,6 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (!modal.classList.contains('open')) return;
   if (e.key === 'Escape') closeCatalog();
@@ -133,7 +193,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') nextBtn.click();
 });
 
-// Mobile menu toggle
+// —— Mobile menu ——
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
@@ -146,7 +206,7 @@ if (menuToggle && nav) {
   });
 }
 
-// Contact form — open mailto with filled fields
+// —— Contact form ——
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', (e) => {

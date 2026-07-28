@@ -83,13 +83,23 @@
       <div class="section-header">
         <p class="eyebrow">What We Offer</p>
         <h2>Products &amp; Services</h2>
-        <p class="section-desc">Browse our product catalogues. Click a category to view the full range.</p>
+        <p class="section-desc">Search or browse our product catalogues. Click a category to view the full range.</p>
+      </div>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="productSearch" placeholder="Search products… e.g. toner, gloves, pens, paper" autocomplete="off" aria-label="Search products">
+          <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" hidden>&times;</button>
+        </div>
+        <p class="search-status" id="searchStatus" aria-live="polite"></p>
       </div>
 
       <div class="products-grid" id="productsGrid">
 
         <!-- General Stationeries -->
-        <article class="product-card" data-category="stationeries">
+        <article class="product-card" data-category="stationeries" data-keywords="stationery stationeries office pens pencils paper folders notebooks binders staplers scissors rulers markers highlighters envelopes sticky notes desk">
           <div class="product-image">
             <img src="PRODUCT%20CATALOG%202025%20-%20General%20Stationeries%20(pdf.io)%20(1)/PRODUCT%20CATALOG%202025%20-%20General%20Stationeries-0.jpg" alt="General Stationeries" loading="lazy">
           </div>
@@ -101,7 +111,7 @@
         </article>
 
         <!-- Inks & Toners -->
-        <article class="product-card" data-category="inks">
+        <article class="product-card" data-category="inks" data-keywords="ink inks toner toners cartridge cartridges printer printing hp canon epson brother laser inkjet refill">
           <div class="product-image">
             <img src="PRODUCT%20CATALOG%202025%20-%20Inks%20%26%20Toners/PRODUCT%20CATALOG%202025-0.jpg" alt="Inks &amp; Toners" loading="lazy">
           </div>
@@ -113,7 +123,7 @@
         </article>
 
         <!-- IT Accessories -->
-        <article class="product-card" data-category="it">
+        <article class="product-card" data-category="it" data-keywords="it accessories computer cable cables usb mouse keyboard flash drive hard drive storage peripheral peripherals laptop charger adapter">
           <div class="product-image">
             <img src="PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES%20(pdf.io)/PRODUCT%20CATALOG%202025%20-%20IT%20ACCESSERIES-0.jpg" alt="IT Accessories" loading="lazy">
           </div>
@@ -125,7 +135,7 @@
         </article>
 
         <!-- Catering & Paper Products -->
-        <article class="product-card" data-category="catering">
+        <article class="product-card" data-category="catering" data-keywords="catering paper products tissue toilet paper napkin napkins cups plates packaging food service kitchen">
           <div class="product-image">
             <img src="PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)%20(pdf.io)/PRODUCT%20CATALOG%202025%20-CATERING%20%26%20PAPER%20PRODUCTS%20(1)-0.jpg" alt="Catering &amp; Paper Products" loading="lazy">
           </div>
@@ -137,7 +147,7 @@
         </article>
 
         <!-- PPE Consumables -->
-        <article class="product-card" data-category="ppe">
+        <article class="product-card" data-category="ppe" data-keywords="ppe safety gloves mask masks helmet boots protective equipment vest goggles earplugs hard hat boots">
           <div class="product-image">
             <img src="PRODUCT%20CATALOG%202025%20-PPE%20CONSUMABLES%20(1)-0.jpg" alt="PPE Consumables" loading="lazy">
           </div>
@@ -149,6 +159,8 @@
         </article>
 
       </div>
+
+      <p class="search-empty" id="searchEmpty" hidden>No products match your search. Try a different keyword or <button type="button" class="link-btn" id="clearSearchLink">clear the search</button>.</p>
 
       <p class="products-note">Contact us for current stock, pricing and bulk orders. We also supply furniture, wooden pallets, auto parts and industrial supplies on request.</p>
     </div>
